@@ -1,0 +1,82 @@
+article.tweet {
+  margin: 40px 0 10px 0 !important;
+  border-radius: 5px;
+  border: 5px solid #545149;
+  margin: 0
+}
+
+article.tweet header {
+  background-color: #f4f1ec;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 100px;
+  padding: 10px;
+  background-image: none;
+}
+
+article.tweet header div {
+  padding-left: 15px;
+}
+
+article.tweet header img {
+  border-radius: 5px;
+  float: left;
+}
+
+article.tweet header span {
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+article.tweet h3.userName {
+  margin-top: 8px;
+  margin-left: 60px;
+  color: #545149;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+}
+
+article.tweet span.userId {
+  color: #4056A1;
+  font-family: 'Source Sans Pro', sans-serif;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+article.tweet p {
+  margin: 20px;
+  font-weight: 600;
+  padding-bottom: 35px;
+  border-bottom: 4px solid #545149;
+}
+
+article.tweet footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+article.tweet footer > p {
+  font-weight: 600;
+  font-size: 0.7em;
+  padding: 5px;
+  margin-top: 0px;
+  margin-bottom: 13px;
+  border: none;
+}
+
+article.tweet .tweet-buttons {
+  color: #4056A1;
+  font-size: 16px;
+  padding: 5px 40px;
+  padding-right: 40px;
+  padding-top: 3px;
+  margin-bottom: 13px;
+}    
+
+article.tweet .tweet-buttons ion-icon {
+  margin-left: 6px;
+  cursor: pointer;
+}
