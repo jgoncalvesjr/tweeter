@@ -8,6 +8,7 @@ textarea {
   border:none;
   background-color:#f4f1ec;
   width: 100%;
+  resize: none;
   border-bottom :5px solid black
 }
 
@@ -38,3 +39,7 @@ output {
   font-family: 'Bungee';
   color:#545149;
 } 
+
+.counterRed {
+  color: #d41e27;
+}
