@@ -1,0 +1,40 @@
+label {
+  display: block;
+  background-color:#f4f1ec;
+  margin: 3px 0 3px 0;
+}
+
+textarea {
+  border:none;
+  background-color:#f4f1ec;
+  width: 100%;
+  border-bottom :5px solid black
+}
+
+.new-tweet div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5px 0 5px;
+}
+
+.new-tweet h2 {
+  width: 100%;
+  display: flex;
+  margin: 5px 0 5px 0;
+}
+
+button {
+  display: flex;
+  align-items: flex-end;
+  font-family: 'Bungee';
+  color: #f4f1ec;
+  background-color:#4056A1
+}
+
+output {
+  display: block;
+  align-items: flex-end;
+  font-family: 'Bungee';
+  color:#545149;
+} 
