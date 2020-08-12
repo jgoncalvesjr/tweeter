@@ -3,12 +3,12 @@
   padding: 0;
 }
 
-div.tweet {
+article.tweet {
   margin: 40px 0 10px 0;
   border: 5px solid #545149;
 }
 
-div.tweet header {
+article.tweet header {
   margin-top: 0px;
   background-color: #f4f1ec;
   display: flex;
@@ -19,22 +19,22 @@ div.tweet header {
   background-image: none;
 }
 
-div.tweet header div {
+article.tweet header div {
   padding-left: 15px;
   display: flex
 }
 
-div.tweet header img {
+article.tweet header img {
   border-radius: 5px;
   float: left;
 }
 
-div.tweet header span {
+article.tweet header span {
   padding-right: 15px;
   padding-bottom: 15px;
 }
 
-div.tweet h3.userName {
+article.tweet h3.userName {
   margin-top: 8px;
   margin-left: 15px;
   color: #545149;
@@ -42,43 +42,64 @@ div.tweet h3.userName {
   font-weight: 300;
 }
 
-div.tweet span.userId {
+article.tweet span.userId {
   color: #4056A1;
   font-family: 'Source Sans Pro', sans-serif;
-  opacity: 0.7;
+  opacity: 0;
   font-weight: 300;
 }
 
-div.tweet p {
+article.tweet:hover span.userId {
+  opacity: 0.7;
+}
+
+article.tweet p {
   margin: 20px 20px 5px 20px;
-  font-weight: 400;
+  font-weight: 300;
   padding-bottom: 25px;
   color: #545149;
   cursor: text;
 }
 
-div.tweet footer {
+article.tweet footer {
   display: flex;
   justify-content: space-between;
-  margin: 0 10px 0 10px;
+  margin: 0 13px 0 13px;
   border-top: 4px solid #545149;
 }
 
-div.tweet footer > p {
+article.tweet footer > p {
   font-size: 0.7em;
   margin: 6px 0 13px 10px;
   border: none;
 }
 
-div.tweet .tweet-buttons {
+article.tweet .tweet-buttons {
   color: #4056A1;
   font-size: 16px;
   padding: 5px 20px 0 20px;
   margin-bottom: 0;
 }    
 
-div.tweet .tweet-buttons fav-icon {
+article.tweet .tweet-buttons fav-icon {
   margin-left: 6px;
   font-weight: 300;
   cursor: pointer;
+}
+
+/* Hover effects */
+article.tweet:hover {
+  box-shadow: 8px 8px 5px #829bed;
+}
+
+article.tweet:hover h3.userName {
+  font-weight: 400;
+}
+
+article.tweet:hover p {
+  font-weight: 400;
+}
+
+article.tweet:hover .tweet-buttons {
+  font-size: 17px;
 }
