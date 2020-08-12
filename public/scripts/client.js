@@ -61,7 +61,7 @@ $(document).ready(function() {
     // If there is no input of if input is only spaces
     if (userInput === "" || !userInput.trim()) {
       $('#ValidateError').hide();
-      $('#ValidateError').text("Oops! You didn't enter anything!");
+      $('#ValidateError').text("⚠️ Cannot post an empty text! ⚠️");
       $("#ValidateError").slideDown(200);
       return null;
     }
@@ -69,7 +69,7 @@ $(document).ready(function() {
     // If input is over 140 characters
     if (userInput.length > 140) {
       $('#ValidateError').hide();
-      $('#ValidateError').text("Oops! You're over the character limit!");
+      $('#ValidateError').text("⚠️ Over character limit! Trim your tweet a little! ⚠️");
       $("#ValidateError").slideDown(200);
       return null;
     }
@@ -79,6 +79,7 @@ $(document).ready(function() {
       .then(function(result) {
         $('#tweets-container').empty();
         target.text(140);
+        $('.new-tweet').hide();
         loadTweets();
         $('#ValidateError').css('display', 'none');
         $('#tweet-form').trigger("reset");
@@ -94,22 +95,19 @@ $(document).ready(function() {
       renderTweets(response.reverse());
     });
   };
-  loadTweets();
 
-  $('.tweet').on('mouseenter', function() {
-    $(this).css('box-shadow', '8px 8px #829bed');
-    $('h3.userName').css('font-weight', '400');
-    $('span.userId').css('opacity', '0.66');
-    $('fav-icon').css('font-weight', '400');
-    $('p').css('font-weight', '400');
+  // Toggles new tweet form
+  $('.form-toggle').on('click', () => {
+      
+    if ($('.new-tweet').css('display') === 'none') {
+        $('.new-tweet').slideDown('slow');
+        $('.new-tweet textarea').focus();
+    } else {
+        $('.new-tweet').slideUp('slow');
+    }
+
   });
-  
-  $('.tweet').on('mouseleave', function() {
-    $(this).css('box-shadow', 'none');
-    $('h3.userName').css('font-weight', '300');
-    $('span.userId').css('opacity', '0');
-    $('fav-icon').css('font-weight', '300');
-    $('p').css('font-weight', '300');
-  });
+
+  loadTweets();
 
 });

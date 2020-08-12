@@ -23,7 +23,7 @@
     <!-- Top nav bar (fixed) -->
       <nav>
         <span>tweeter</span>
-        <p><strong>Write </strong> a new tweet</p>
+        <p class="form-toggle"><strong>Write </strong> a new tweet</p>
       </nav>
       <header>
         <div>
@@ -38,7 +38,6 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <div class="error-message"></div>
         <form id="tweet-form" method="POST" action="/tweets/" enctype="application/x-www-form-urlencoded"
         accept-charset="UTF-8">
           <h5 id="ValidateError"></h5>
@@ -59,7 +58,7 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
+
   <!-- App JS -->
   <script type="text/javascript" src="./scripts/client.js"></script>
   <script type="text/javascript" src="./scripts/compose-char-counter.js" ></script>

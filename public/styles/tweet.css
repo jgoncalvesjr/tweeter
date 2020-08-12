@@ -90,6 +90,7 @@ article.tweet .tweet-buttons fav-icon {
 /* Hover effects */
 article.tweet:hover {
   box-shadow: 8px 8px 5px #829bed;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 article.tweet:hover h3.userName {

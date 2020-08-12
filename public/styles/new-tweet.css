@@ -1,5 +1,12 @@
 .new-tweet {
   padding-top: 35px;
+  display: none;
+}
+
+#ValidateError {
+  display: flex;
+  justify-content: center;
+  color: red;
 }
 
 label {
