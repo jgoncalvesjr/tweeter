@@ -1,10 +1,10 @@
-article.tweet {
+div.tweet {
   margin: 40px 0 10px 0 !important;
   border: 5px solid #545149;
   margin: 0
 }
 
-article.tweet header {
+div.tweet header {
   margin-top: 0px;
   background-color: #f4f1ec;
   display: flex;
@@ -15,21 +15,21 @@ article.tweet header {
   background-image: none;
 }
 
-article.tweet header div {
+div.tweet header div {
   padding-left: 15px;
 }
 
-article.tweet header img {
+div.tweet header img {
   border-radius: 5px;
   float: left;
 }
 
-article.tweet header span {
+div.tweet header span {
   padding-right: 15px;
   padding-bottom: 15px;
 }
 
-article.tweet h3.userName {
+div.tweet h3.userName {
   margin-top: 8px;
   margin-left: 60px;
   color: #545149;
@@ -37,28 +37,29 @@ article.tweet h3.userName {
   font-weight: 300;
 }
 
-article.tweet span.userId {
+div.tweet span.userId {
   color: #4056A1;
   font-family: 'Source Sans Pro', sans-serif;
-  opacity: 0;
+  opacity: 0.7;
   font-weight: 300;
 }
 
-article.tweet p {
+div.tweet p {
   margin: 20px;
   font-weight: 400;
   padding-bottom: 35px;
   border-bottom: 4px solid #545149;
+  color: #545149;
+  cursor: text;
 }
 
-article.tweet footer {
+div.tweet footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-
-article.tweet footer > p {
+div.tweet footer > p {
   font-weight: 400;
   font-size: 0.7em;
   padding: 5px;
@@ -67,7 +68,7 @@ article.tweet footer > p {
   border: none;
 }
 
-article.tweet .tweet-buttons {
+div.tweet .tweet-buttons {
   color: #4056A1;
   font-size: 16px;
   padding: 5px 40px;
@@ -76,7 +77,7 @@ article.tweet .tweet-buttons {
   margin-bottom: 13px;
 }    
 
-article.tweet .tweet-buttons fav-icon {
+div.tweet .tweet-buttons fav-icon {
   margin-left: 6px;
   font-weight: 300;
   cursor: pointer;

@@ -12,11 +12,6 @@ header {
 } 
 
 h2 {
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
-}
-
-.first-name {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 700;
 }
