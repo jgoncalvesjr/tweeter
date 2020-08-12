@@ -1,7 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 div.tweet {
-  margin: 40px 0 10px 0 !important;
+  margin: 40px 0 10px 0;
   border: 5px solid #545149;
-  margin: 0
 }
 
 div.tweet header {
@@ -17,6 +21,7 @@ div.tweet header {
 
 div.tweet header div {
   padding-left: 15px;
+  display: flex
 }
 
 div.tweet header img {
@@ -31,7 +36,7 @@ div.tweet header span {
 
 div.tweet h3.userName {
   margin-top: 8px;
-  margin-left: 60px;
+  margin-left: 15px;
   color: #545149;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
@@ -45,10 +50,9 @@ div.tweet span.userId {
 }
 
 div.tweet p {
-  margin: 20px;
+  margin: 20px 20px 5px 20px;
   font-weight: 400;
-  padding-bottom: 35px;
-  border-bottom: 4px solid #545149;
+  padding-bottom: 25px;
   color: #545149;
   cursor: text;
 }
@@ -56,25 +60,21 @@ div.tweet p {
 div.tweet footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin: 0 10px 0 10px;
+  border-top: 4px solid #545149;
 }
 
 div.tweet footer > p {
-  font-weight: 400;
   font-size: 0.7em;
-  padding: 5px;
-  margin-top: 0px;
-  margin-bottom: 13px;
+  margin: 6px 0 13px 10px;
   border: none;
 }
 
 div.tweet .tweet-buttons {
   color: #4056A1;
   font-size: 16px;
-  padding: 5px 40px;
-  padding-right: 40px;
-  padding-top: 3px;
-  margin-bottom: 13px;
+  padding: 5px 20px 0 20px;
+  margin-bottom: 0;
 }    
 
 div.tweet .tweet-buttons fav-icon {
