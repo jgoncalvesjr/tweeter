@@ -6,7 +6,7 @@
 
 // XSS injection escape function
 const escape = function(str) {
-  let div = document.createElement('div');
+  const div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
@@ -37,9 +37,9 @@ const createTweetElement = (tweetObj) => {
   <footer>
     <p>${date}</p>
     <div class="tweet-buttons">
-      <fav-icon name="flag">fl</ion-icon>
-      <fav-icon name="repeat">rt</ion-icon>
-      <fav-icon name="heart">lv</ion-icon>
+      <i class="fab fa-font-awesome-flag"></i>
+      <i class="fas fa-retweet"></i>
+      <i class="fas fa-heart"></i>
     </div>
   </footer>
 </article>

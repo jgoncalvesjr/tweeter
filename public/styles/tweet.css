@@ -77,16 +77,14 @@ article.tweet footer > p {
 
 article.tweet .tweet-buttons {
   color: #4056A1;
-  font-size: 16px;
+  font-size: 18px;
   padding: 5px 20px 0 20px;
   margin-bottom: 0;
-}    
-
-article.tweet .tweet-buttons fav-icon {
-  margin-left: 6px;
-  font-weight: 300;
-  cursor: pointer;
 }
+
+article.tweet .tweet-buttons i {
+  padding-right: 5px;
+}    
 
 /* Hover effects */
 article.tweet:hover {
@@ -103,9 +101,13 @@ article.tweet:hover p {
 }
 
 article.tweet:hover .tweet-buttons {
-  font-size: 17px;
+  font-size: 20px;
 }
 
 article.tweet:hover header img {
   opacity: 1;
+}
+
+article.tweet i:hover {
+  cursor: pointer;
 }
