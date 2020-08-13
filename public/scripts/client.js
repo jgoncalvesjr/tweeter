@@ -4,8 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-console.log('Load!');
-
 // XSS injection escape function
 const escape = function(str) {
   let div = document.createElement('div');
@@ -19,14 +17,14 @@ const escape = function(str) {
 const renderTweets = (tweets) => {
   tweets.forEach((tweet) => {
     createTweetElement(tweet);
-    $('#tweets-container').append(createTweetElement(tweet));
+    $('#tweets-container').prepend(createTweetElement(tweet));
   });
 };
 
 // Returns a tweet(article)
 const createTweetElement = (tweetObj) => {
-  const date = Date(tweetObj.created_at).toString();
-  let $tweet = `
+  const date = moment(tweetObj.created_at).fromNow();
+  const $tweet = `
   <article class="tweet">
   <header>
     <div>
@@ -55,6 +53,7 @@ $(document).ready(function() {
   // Submit tweet form using AJAX. Form is serialized
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
+    const serialized = $(this).serialize();
     const target = $(this).closest(".new-tweet").find('.counter');
     const userInput = $(this).find('textarea').val();
 
@@ -73,16 +72,17 @@ $(document).ready(function() {
       $("#ValidateError").slideDown(200);
       return null;
     }
-    console.log('Pulling tweet!')
-    const serialized = $(this).serialize();
+
+    $('#tweets-container').empty();
+    target.text(140);
+    $('.new-tweet').hide();
+    $('#ValidateError').css('display', 'none');
+    $('#tweet-form').trigger("reset");
     $.ajax('/tweets', {method: 'POST', data: serialized})
       .then(function(result) {
-        $('#tweets-container').empty();
-        target.text(140);
-        $('.new-tweet').hide();
+
         loadTweets();
-        $('#ValidateError').css('display', 'none');
-        $('#tweet-form').trigger("reset");
+
       });
   });
 
@@ -92,7 +92,7 @@ $(document).ready(function() {
       url: '/tweets',
       method: 'GET'
     }).then((response) => {
-      renderTweets(response.reverse());
+      renderTweets(response);
     });
   };
 
