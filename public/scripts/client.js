@@ -60,7 +60,7 @@ $(document).ready(function() {
     // If there is no input of if input is only spaces
     if (userInput === "" || !userInput.trim()) {
       $('#ValidateError').hide();
-      $('#ValidateError').text("⚠️ Cannot post an empty text! ⚠️");
+      $('#ValidateError').text("Cannot post an empty text!");
       $("#ValidateError").slideDown(200);
       return null;
     }
@@ -68,7 +68,7 @@ $(document).ready(function() {
     // If input is over 140 characters
     if (userInput.length > 140) {
       $('#ValidateError').hide();
-      $('#ValidateError').text("⚠️ Over character limit! Trim your tweet a little! ⚠️");
+      $('#ValidateError').text("Over character limit! Trim your tweet a little!");
       $("#ValidateError").slideDown(200);
       return null;
     }

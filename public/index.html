@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -28,12 +29,11 @@
         <span>tweeter</span>
         <p class="form-toggle"><strong>Write </strong> a new tweet</p>
       </nav>
-      <header>
-        <div>
-            <img class="profile-hex" src="./images/profile-hex.png"> 
+      <header class="main-header">
+        <div class="header-image">
+            <img class="profile-hex" src="./images/profile-hex.png" alt="Profile image"> 
         </div>
-        <br>
-        <div>
+        <div class="header-name">
             <h2><strong>Joao</strong> Junior</h2>
         </div>
       </header>
@@ -53,7 +53,7 @@
         </form>
       </section>
 
-      <section id="tweets-container">
+      <section class="tweets" id="tweets-container">
       </section>
 
     </main>

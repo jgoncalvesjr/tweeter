@@ -1,16 +1,30 @@
 header {
-  margin-top: 120px;
+  margin-top: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; 
-  height: 400px;
+  height: 21rem;
   width: 100%;
   color: #FFFFFF;
   background-color:#00a2a8;
   background-image: url('../images/dark-stripes-light.png');
 } 
 
-h2 {
-  font-weight: 400;
+header .profile-hex img {
+  width: 100%;
+  height: auto;
 }
+
+header h2 {
+  font-weight: 300;
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media only screen and (min-width: 1024px) {
+  header.main-header {
+      margin: 8rem 3rem 0 3rem;
+    }
+  }
+  
+

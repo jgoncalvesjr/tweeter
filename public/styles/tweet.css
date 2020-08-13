@@ -1,43 +1,45 @@
-* {
-  margin: 0;
-  padding: 0;
+section.tweets {
+  width: 100%;
+  padding: 1rem 0;
 }
 
 article.tweet {
-  margin: 40px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
   border: 5px solid #545149;
+  padding: 0;
 }
 
 article.tweet header {
-  margin-top: 0px;
+  margin-top: 0.8rem;
   background-color: #f4f1ec;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  height: 100px;
-  padding: 10px;
+  height: 1.5rem;
+  padding: 2.25rem 0.3rem;
   background-image: none;
 }
 
 article.tweet header div {
-  padding-left: 15px;
-  display: flex
+  padding-left: 0.6rem;
+  display: flex;
 }
 
 article.tweet header img {
-  border-radius: 5px;
   opacity: 0.6;
-  float: left;
 }
 
 article.tweet header span {
-  padding-right: 15px;
-  padding-bottom: 15px;
+  padding-right: 0.6rem;
+  padding-bottom: 0.9375rem;
 }
 
 article.tweet h3.userName {
-  margin-top: 8px;
-  margin-left: 15px;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
   color: #545149;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
@@ -46,6 +48,7 @@ article.tweet h3.userName {
 article.tweet span.userId {
   color: #4056A1;
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.25rem;
   opacity: 0;
   font-weight: 300;
 }
@@ -55,9 +58,10 @@ article.tweet:hover span.userId {
 }
 
 article.tweet p {
-  margin: 20px 20px 5px 20px;
+  margin: 1.25rem 1.25rem 0.3125rem 1.25rem;
   font-weight: 300;
-  padding-bottom: 25px;
+  font-size: 1.5rem;
+  padding-bottom: 1.5625rem;
   color: #545149;
   cursor: text;
 }
@@ -65,25 +69,25 @@ article.tweet p {
 article.tweet footer {
   display: flex;
   justify-content: space-between;
-  margin: 0 13px 0 13px;
+  margin: 0 0.8125rem 0 0.8125rem;
   border-top: 4px solid #545149;
 }
 
 article.tweet footer > p {
-  font-size: 0.7em;
+  font-size: 1rem;
   margin: 6px 0 13px 10px;
   border: none;
 }
 
 article.tweet .tweet-buttons {
   color: #4056A1;
-  font-size: 18px;
+  font-size: 0.9rem;
   padding: 5px 20px 0 20px;
   margin-bottom: 0;
 }
 
 article.tweet .tweet-buttons i {
-  padding-right: 5px;
+  padding-right: 0.3125rem;
 }    
 
 /* Hover effects */
@@ -101,7 +105,7 @@ article.tweet:hover p {
 }
 
 article.tweet:hover .tweet-buttons {
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 article.tweet:hover header img {
@@ -111,3 +115,4 @@ article.tweet:hover header img {
 article.tweet i:hover {
   cursor: pointer;
 }
+

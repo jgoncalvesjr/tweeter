@@ -2,18 +2,20 @@ nav {
   width: 100%;
   position: fixed;
   top: 0;
-  height: 120px;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:	#4056A1;
+  background-color:#00a2a8;
+  background-image: url('../images/dark-stripes-light.png');
   padding: 0 1.5em;
   z-index: 1;
 }
 
-span {
-  font-family: 'Bungee';
+nav span {
+  font-family: 'Bungee', cursive;
   color: #FFFFFF;
+  font-size: larger;
 } 
 
 p {
@@ -21,4 +23,23 @@ p {
   font-weight: 300;
   color: #FFFFFF;
   cursor: pointer;
+  font-size: larger;
 }
+
+
+/* Desktops: from 1024px */
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color:	#4056A1;
+    background-image: none;
+    height: 7.5rem;
+     }
+}
+
+/* Tablets: from 768px */
+@media only screen and (min-width: 768px) {
+  nav {
+    height: 5rem;
+     }
+}
+  
