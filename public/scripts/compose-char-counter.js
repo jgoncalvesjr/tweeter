@@ -4,7 +4,7 @@ $(document).ready(() => {
   const textarea = $('textarea');
   $(textarea).on('input', function() {
     let textCount = $(this).val();
-    $(counter).text(140 - textCount.length)
+    $(counter).text(140 - textCount.length);
     
     if (textCount.length > 140) {
       $(counter).toggleClass('counterRed', true);

@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// XSS injection escape function
+// Escape function from XSS attacks
 const escape = function(str) {
   const div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -13,7 +13,7 @@ const escape = function(str) {
 
 // Creates array of tweet objects
 // leverage createTweetElement(tweet)
-// appends each to #tweets-container
+// appends each to #tweets-container in reverse order
 const renderTweets = (tweets) => {
   tweets.forEach((tweet) => {
     createTweetElement(tweet);
@@ -21,7 +21,7 @@ const renderTweets = (tweets) => {
   });
 };
 
-// Returns a tweet(article)
+// Returns new a tweet(article)
 const createTweetElement = (tweetObj) => {
   const date = moment(tweetObj.created_at).fromNow();
   const $tweet = `
@@ -47,10 +47,11 @@ const createTweetElement = (tweetObj) => {
   return $tweet;
 };
 
-// Async events happen
 $(document).ready(function() {
 
   // Submit tweet form using AJAX. Form is serialized
+  // Tweet is validated, an empty tweet or over 140 characters
+  // will trigger warnings
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
     const serialized = $(this).serialize();
@@ -59,24 +60,24 @@ $(document).ready(function() {
 
     // If there is no input of if input is only spaces
     if (userInput === "" || !userInput.trim()) {
-      $('#ValidateError').hide();
-      $('#ValidateError').text("Cannot post an empty text!");
-      $("#ValidateError").slideDown(200);
+      $('#validateTweet').hide();
+      $('#validateTweet').text("Cannot post an empty text!");
+      $("#validateTweet").slideDown(200);
       return null;
     }
 
     // If input is over 140 characters
     if (userInput.length > 140) {
-      $('#ValidateError').hide();
-      $('#ValidateError').text("Over character limit! Trim your tweet a little!");
-      $("#ValidateError").slideDown(200);
+      $('#validateTweet').hide();
+      $('#validateTweet').text("Over character limit! Trim your tweet a little!");
+      $("#validateTweet").slideDown(200);
       return null;
     }
 
     $('#tweets-container').empty();
     target.text(140);
     $('.new-tweet').hide();
-    $('#ValidateError').css('display', 'none');
+    $('#validateTweet').css('display', 'none');
     $('#tweet-form').trigger("reset");
     $.ajax('/tweets', {method: 'POST', data: serialized})
       .then(function(result) {
@@ -86,7 +87,7 @@ $(document).ready(function() {
       });
   });
 
-  //Load tweets from database
+  // Load tweets from database
   const loadTweets = () => {
     $.ajax({
       url: '/tweets',
@@ -96,18 +97,7 @@ $(document).ready(function() {
     });
   };
 
-  // Toggles new tweet form
-  $('.form-toggle').on('click', () => {
-      
-    if ($('.new-tweet').css('display') === 'none') {
-        $('.new-tweet').slideDown('slow');
-        $('.new-tweet textarea').focus();
-    } else {
-        $('.new-tweet').slideUp('slow');
-    }
-
-  });
-
+  // Loads first tweet batch
   loadTweets();
 
 });

@@ -1,3 +1,4 @@
+/* Navbar styles */
 nav {
   width: 100%;
   position: fixed;
@@ -26,20 +27,19 @@ p {
   font-size: larger;
 }
 
-
-/* Desktops: from 1024px */
+/* Desktops: starting at 1024px */
 @media only screen and (min-width: 1024px) {
   nav {
     background-color:	#4056A1;
     background-image: none;
     height: 7.5rem;
-     }
+  }
 }
 
-/* Tablets: from 768px */
+/* Tablets: starting at 768px */
 @media only screen and (min-width: 768px) {
   nav {
     height: 5rem;
-     }
+  }
 }
   

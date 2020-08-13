@@ -1,9 +1,10 @@
+/* New tweet form styles */
 .new-tweet {
   padding-top: 1rem;
   display: none;
 }
 
-#ValidateError {
+#validateTweet {
   display: none;
   text-align: center;
   color: #d41e27;
@@ -27,6 +28,7 @@ form label, textarea, div {
 
 label {
   margin-bottom: 0.25rem;
+  font-size: 1.25rem;
 }
 
 textarea {
@@ -72,11 +74,4 @@ button:hover {
 
 .counterRed {
   color: #d41e27;
-}
-
-/* mobile */
-@media only screen and (max-width: 768px) {
-  #tweet-text {
-    height: 4rem;
-  }
 }

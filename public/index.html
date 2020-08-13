@@ -43,7 +43,7 @@
       <section class="new-tweet">
         <form id="tweet-form" method="POST" action="/tweets/" enctype="application/x-www-form-urlencoded"
         accept-charset="UTF-8">
-          <h5 id="ValidateError"></h5>
+          <h3 id="validateTweet"></h3>
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text"></textarea>
           <div id="form-btm">
@@ -53,6 +53,7 @@
         </form>
       </section>
 
+      <!-- Tweet history content here -->
       <section class="tweets" id="tweets-container">
       </section>
 
@@ -68,5 +69,6 @@
     <!-- App JS -->
     <script type="text/javascript" src="./scripts/client.js"></script>
     <script type="text/javascript" src="./scripts/compose-char-counter.js" ></script>
+    <script type="text/javascript" src="./scripts/tweet-form-toggle.js"></script>
 
 </html>

@@ -20,11 +20,12 @@ header h2 {
   font-weight: 300;
 }
 
-/* Laptops / Desktops: minimum width of 1024px */
+/* Desktops/laptops: starting at 1024px */
 @media only screen and (min-width: 1024px) {
   header.main-header {
       margin: 8rem 3rem 0 3rem;
-    }
+      width: 80%;
   }
+}
   
 
