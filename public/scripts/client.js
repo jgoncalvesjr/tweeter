@@ -11,8 +11,7 @@ const escape = function(str) {
   return div.innerHTML;
 };
 
-// Creates array of tweet objects
-// leverage createTweetElement(tweet)
+// Creates array of tweet objects collected by createTweetElement(tweet)
 // appends each to #tweets-container in reverse order
 const renderTweets = (tweets) => {
   tweets.forEach((tweet) => {
@@ -26,32 +25,44 @@ const createTweetElement = (tweetData) => {
   const date = moment(tweetData.created_at).fromNow();
   const $tweet = `
   <article class="tweet">
-  <header>
-    <div>
-      <img src="${tweetData.user.avatars}" alt="Avatar">
-      <h3 class="userName">${tweetData.user.name}</h3>
-    </div>
-    <span class="userId">${tweetData.user.handle}</span>
-  </header>
-  <p>${escape(tweetData.content.text)}</p>
-  <footer>
-    <p>${date}</p>
-    <div class="tweet-buttons">
-      <i class="fab fa-font-awesome-flag"></i>
-      <i class="fas fa-retweet"></i>
-      <i class="fas fa-heart"></i>
-    </div>
-  </footer>
-</article>
+    <header>
+      <div>
+        <img src="${tweetData.user.avatars}" alt="Avatar">
+        <h3 class="userName">${tweetData.user.name}</h3>
+      </div>
+      <span class="userId">${tweetData.user.handle}</span>
+    </header>
+      <p>${escape(tweetData.content.text)}</p>
+    <footer>
+      <p>${date}</p>
+        <div class="tweet-buttons">
+          <i class="fab fa-font-awesome-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i>
+        </div>
+    </footer>
+  </article>
   `;
   return $tweet;
 };
 
+// Loads tweets from database
+const loadTweets = () => {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET'
+    }).then((response) => {
+      renderTweets(response);
+    });
+};
+
 $(document).ready(function() {
 
+  // Loads first tweet batch
+  loadTweets();
+
   // Submit tweet form using AJAX. Form is serialized
-  // Tweet is validated, an empty tweet or over 140 characters
-  // will trigger warnings
+  // Tweet is validated, an empty tweet or over 140 characters will trigger warning
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
     const serialized = $(this).serialize();
@@ -74,30 +85,17 @@ $(document).ready(function() {
       return null;
     }
 
+    // Clears forms, submits new tweet to database and loads page with updated tweets
     $('#tweets-container').empty();
     target.text(140);
     $('.new-tweet').hide();
     $('#validateTweet').css('display', 'none');
     $('#tweet-form').trigger("reset");
-    $.ajax('/tweets', {method: 'POST', data: serialized})
-      .then(function(result) {
-
-        loadTweets();
-
-      });
-  });
-
-  // Load tweets from database
-  const loadTweets = () => {
-    $.ajax({
-      url: '/tweets',
-      method: 'GET'
-    }).then((response) => {
-      renderTweets(response);
+    $.ajax('/tweets', {
+      method: 'POST', 
+      data: serialized
+    }).then(function(result) {
+      loadTweets();
     });
-  };
-
-  // Loads first tweet batch
-  loadTweets();
-
+  });
 });
