@@ -48,12 +48,12 @@ const createTweetElement = (tweetData) => {
 
 // Loads tweets from database
 const loadTweets = () => {
-    $.ajax({
-      url: '/tweets',
-      method: 'GET'
-    }).then((response) => {
-      renderTweets(response);
-    });
+  $.ajax({
+    url: '/tweets',
+    method: 'GET'
+  }).then((response) => {
+    renderTweets(response);
+  });
 };
 
 $(document).ready(function() {
@@ -92,7 +92,7 @@ $(document).ready(function() {
     $('#validateTweet').css('display', 'none');
     $('#tweet-form').trigger("reset");
     $.ajax('/tweets', {
-      method: 'POST', 
+      method: 'POST',
       data: serialized
     }).then(function(result) {
       loadTweets();
