@@ -22,18 +22,18 @@ const renderTweets = (tweets) => {
 };
 
 // Returns new a tweet(article)
-const createTweetElement = (tweetObj) => {
-  const date = moment(tweetObj.created_at).fromNow();
+const createTweetElement = (tweetData) => {
+  const date = moment(tweetData.created_at).fromNow();
   const $tweet = `
   <article class="tweet">
   <header>
     <div>
-      <img src="${tweetObj.user.avatars}" alt="Avatar">
-      <h3 class="userName">${tweetObj.user.name}</h3>
+      <img src="${tweetData.user.avatars}" alt="Avatar">
+      <h3 class="userName">${tweetData.user.name}</h3>
     </div>
-    <span class="userId">${tweetObj.user.handle}</span>
+    <span class="userId">${tweetData.user.handle}</span>
   </header>
-  <p>${escape(tweetObj.content.text)}</p>
+  <p>${escape(tweetData.content.text)}</p>
   <footer>
     <p>${date}</p>
     <div class="tweet-buttons">
