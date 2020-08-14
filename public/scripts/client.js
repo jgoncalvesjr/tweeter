@@ -47,7 +47,20 @@ const createTweetElement = (tweetData) => {
   return $tweet;
 };
 
+// Loads tweets from database
+const loadTweets = () => {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET'
+    }).then((response) => {
+      renderTweets(response);
+    });
+};
+
 $(document).ready(function() {
+
+  // Loads first tweet batch
+  loadTweets();
 
   // Submit tweet form using AJAX. Form is serialized
   // Tweet is validated, an empty tweet or over 140 characters
@@ -74,30 +87,17 @@ $(document).ready(function() {
       return null;
     }
 
+    // Clears forms, submits new tweet to database and loads page with updated tweets
     $('#tweets-container').empty();
     target.text(140);
     $('.new-tweet').hide();
     $('#validateTweet').css('display', 'none');
     $('#tweet-form').trigger("reset");
-    $.ajax('/tweets', {method: 'POST', data: serialized})
-      .then(function(result) {
-
-        loadTweets();
-
-      });
-  });
-
-  // Load tweets from database
-  const loadTweets = () => {
-    $.ajax({
-      url: '/tweets',
-      method: 'GET'
-    }).then((response) => {
-      renderTweets(response);
+    $.ajax('/tweets', {
+      method: 'POST', 
+      data: serialized
+    }).then(function(result) {
+      loadTweets();
     });
-  };
-
-  // Loads first tweet batch
-  loadTweets();
-
+  });
 });
