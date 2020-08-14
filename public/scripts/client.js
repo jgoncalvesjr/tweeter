@@ -11,8 +11,7 @@ const escape = function(str) {
   return div.innerHTML;
 };
 
-// Creates array of tweet objects
-// leverage createTweetElement(tweet)
+// Creates array of tweet objects collected by createTweetElement(tweet)
 // appends each to #tweets-container in reverse order
 const renderTweets = (tweets) => {
   tweets.forEach((tweet) => {
@@ -63,8 +62,7 @@ $(document).ready(function() {
   loadTweets();
 
   // Submit tweet form using AJAX. Form is serialized
-  // Tweet is validated, an empty tweet or over 140 characters
-  // will trigger warnings
+  // Tweet is validated, an empty tweet or over 140 characters will trigger warning
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
     const serialized = $(this).serialize();
