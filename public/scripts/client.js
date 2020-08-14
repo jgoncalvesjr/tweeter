@@ -48,21 +48,12 @@ const createTweetElement = (tweetData) => {
 
 // Loads tweets from database
 const loadTweets = () => {
-<<<<<<< HEAD
     $.ajax({
       url: '/tweets',
       method: 'GET'
     }).then((response) => {
       renderTweets(response);
     });
-=======
-  $.ajax({
-    url: '/tweets',
-    method: 'GET'
-  }).then((response) => {
-    renderTweets(response);
-  });
->>>>>>> 0ec1c8eb8f6519118d62c4f6d68d90c9a38c0357
 };
 
 $(document).ready(function() {
@@ -101,11 +92,7 @@ $(document).ready(function() {
     $('#validateTweet').css('display', 'none');
     $('#tweet-form').trigger("reset");
     $.ajax('/tweets', {
-<<<<<<< HEAD
       method: 'POST', 
-=======
-      method: 'POST',
->>>>>>> 0ec1c8eb8f6519118d62c4f6d68d90c9a38c0357
       data: serialized
     }).then(function(result) {
       loadTweets();
