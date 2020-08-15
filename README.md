@@ -6,7 +6,7 @@ Tweeter is a simple, single-page Twitter clone. You can create and explore messa
 
 # Final product
 
-Tweeter is designed to perform in mobile devices, tablets and desktop. Its layout can adapt responsively depending on the device you may be using.
+Tweeter is designed to perform in mobile devices, tablets and desktops. Its layout can adapt responsively depending on the device you may be using.
 
 ![Mobile presentation](https://github.com/jgoncalvesjr/tweeter/blob/master/docs/tweeter-mobile.png) ![Tablet presentation](https://github.com/jgoncalvesjr/tweeter/blob/master/docs/tweeter-tablet.png)
 
